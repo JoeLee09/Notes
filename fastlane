@@ -1,4 +1,9 @@
-1、Fastfile内容：
+fastlane搭建自动打包服务(以发布到fir为例)
+
+1、进入项目根目录(workspace管理则到workspace同级，否则进入xcodeproj)
+2、终端输入 fastlane init 进行安装；
+
+3、Fastfile内容：
 
 APP_NAME  = "xxx"//APP名
 WORKSPACE = "xxx.xcworkspace"//workspace管理则需加该行
@@ -27,5 +32,5 @@ platform :ios do
   end
 end
 
-2、需注意，项目使用了pod管理第三方，添加的cocoapods 需在Gemfile中同步添加 gem "cocoapods";
-3、保存之后，终端输入 fastlane ios to_firim 
+4、需注意，项目使用了pod管理第三方，添加的cocoapods 需在Gemfile中同步添加 gem "cocoapods";
+5、保存之后，终端输入 fastlane ios to_firim 
