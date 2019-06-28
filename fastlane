@@ -1,1 +1,31 @@
+1、Fastfile内容：
 
+APP_NAME  = "xxx"//APP名
+WORKSPACE = "xxx.xcworkspace"//workspace管理则需加该行
+SCHEME = "xxx"//工程名
+OUTPUT_DIRECTORY = "/Users/Joe/Desktop/Archive/xxx"//ipa路径
+IPA_NAME = "xxx"//ipa名称
+EXPORT_METHOD = "enterprise"
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :to_firim do // to_firim 为名字，可任意
+	cocoapods
+	gym(
+	scheme: "#{SCHEME}",
+	export_method: "#{EXPORT_METHOD}",
+	output_directory: "#{OUTPUT_DIRECTORY}",
+	output_name: "#{IPA_NAME}",
+	)
+	xcclean(
+		workspace: "#{WORKSPACE}",
+		scheme: "#{SCHEME}"	
+	)
+	firim(firim_api_token:"xxxxxxxx")//自动上传fir
+  end
+end
+
+2、需注意，项目使用了pod管理第三方，添加的cocoapods 需在Gemfile中同步添加 gem "cocoapods";
+3、保存之后，终端输入 fastlane ios to_firim 
