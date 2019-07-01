@@ -34,3 +34,35 @@ end
 
 4、需注意，项目使用了pod管理第三方，添加的cocoapods 需在Gemfile中同步添加 gem "cocoapods";
 5、保存之后，终端输入 fastlane ios to_firim 
+
+
+
+{
+"CARTOON_FANTASY_VIOLENCE": 0,
+"REALISTIC_VIOLENCE": 0, 
+"PROLONGED_GRAPHIC_SADISTIC_REALISTIC_VIOLENCE": 0,
+"PROFANITY_CRUDE_HUMOR": 0,
+"MATURE_SUGGESTIVE": 0, 
+"HORROR": 2,
+"MEDICAL_TREATMENT_INFO": 0,
+"ALCOHOL_TOBACCO_DRUGS": 0, 
+"GAMBLING": 0, 
+"SEXUAL_CONTENT_NUDITY": 0,
+"GRAPHIC_SEXUAL_CONTENT_NUDITY": 0, 
+"UNRESTRICTED_WEB_ACCESS": 0,
+"GAMBLING_CONTESTS": 0
+}
+
+{
+卡通或幻想暴力,
+现实暴力,
+大量露骨或残暴的现实暴力,
+低俗笑话,
+成人/性暗示题材,
+恐怖/惊悚题材,
+医学/医疗信息,
+使用或提及烟、酒或毒品,
+模拟赌博,
+色情或裸露内容,
+色情及裸体画面,
+}
