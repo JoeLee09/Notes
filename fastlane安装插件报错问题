@@ -1,0 +1,18 @@
+安装插件fastlane-plugin-versioning时出现
+
+[19:37:28]: It seems like you wanted to load some plugins, however they couldn't be loaded
+[19:37:28]: Please follow the troubleshooting guide: https://docs.fastlane.tools/plugins/plugins-troubleshooting/
+Updating plugin dependencies...
+
+[!] No plugins are installed
+
+
+解决：
+检查Gemfile和Pluginfile：
+Gemfile：
+默认为：plugins_path = File.join(File.dirname(__FILE__), '.', 'Pluginfile')
+eval_gemfile(plugins_path) if File.exist?(plugins_path)
+
+实际中Pluginfile是放在 “项目文件夹/fastlane/” 下，故路径需修改为如下：
+plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')
+eval_gemfile(plugins_path) if File.exist?(plugins_path)
