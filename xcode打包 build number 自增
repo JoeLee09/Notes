@@ -1,0 +1,23 @@
+xcode打包 build number 自增：
+具体方法如下：
+Project->Targets->Build Phases-> New Run Script Phase，然后在脚本代码框中写入以下的脚本代码:
+#! Auto Increment Version Script
+#! 在Info.plist文件中自定义 CFBundleBuildDate 和 CFBundleBuildNumber
+#! /bin/bash
+infoPlist="${INFOPLIST_FILE}"
+#! GET CFBundleBuildNumber value
+buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleBuildNumber" ${infoPlist})
+#! CFBundleBuildNumber + 1
+buildNumber=$((${buildNumber} + 1))
+#! SET CFBundleBuildNumber on Info.plist
+/usr/libexec/PlistBuddy -c "Set :CFBundleBuildNumber ${buildNumber}" ${infoPlist}
+#! GET CFBundleShortVersionString
+shortVersion=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" ${infoPlist})
+#! Composes the buildNumber as CFBundleVersion
+buildNumber="${shortVersion}.${buildNumber}"
+#! SET CFBundleVersion
+/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${buildNumber}" ${infoPlist}
+#! GET date string
+buildDate="$(date +%Y.%m.%d.%H:%M:%S)"
+#! SET CFBundleBuildDate
+/usr/libexec/PlistBuddy -c "Set :CFBundleBuildDate ${buildDate}" ${infoPlist}
