@@ -1,0 +1,16 @@
+
+Deliver常用配置项：
+Name: Type Description Default 
+ipa: string ipa地址 如果使用gym，可以通过上下文获取 
+metadata_path: string 指定metadata目录地址 如果在fastlane中./fastlane/metadata，如果作为独立的命令行应用./metadata 
+screenshots_path: string 指定screenshots目录地址 如果在fastlane中./fastlane/screenshots，如果作为独立的命令行应用./screenshots 
+skip_binary_upload: bool 跳过二进制文件上传，适用于只想改metadata false 
+skip_screenshots: bool 跳过截图上传，如果截图没有变化，开启这项节约时间 false 
+skip_metadata: bool 跳过元数据上传 false 
+force: bool deliver会在上传时汇总信息生成HTML也，等待你审核。跳过这项审核此项设为true false 
+submit_for_review: bool 上传完成是否自动提交审核 false 
+automatic_release: bool 审核通过是否自动释放 false 
+price_tier: int App价格级别。注意：这项提交当时就会生效，所以更改价格还是在后天手动操作 
+submission_information: hash 这是在iTC上点击提交之后的问答表格，可选项 
+app_review_information: hash 提供审核时的信息，详情 
+app_icon string: 指定icon图片地址，必须为png格式
