@@ -48,12 +48,12 @@ app_icon:                 string            指定icon图片地址，必须为pn
 
 
 Gym常用配置项：
-Name              Type          Description                     Default 
-scheme:           string        指定需要编译的scheme 
-clean:            bool          是否在编译前clean                 false 
-output_directory: string        导出目录                          ./
-output_name:      string        导出ipa名字                       [app_name].ipa 
-export_options:   hash/string   这里指定Xcode API的外部配置文件地址，或者配置hash，见下文 
-export_method:    string        打包方式，可选项app-store ad-hoc package enterprise development developer-id 如果在fastlane中使用了sigh，这个值会从上下文获取 
-include_bitcode:  bool          是否开启bitcode Xcode API         默认值为true 
-include_symbols:  bool          是否生成符号表 Xcode API           默认值为true
+Name                      Type            Description                     Default 
+scheme:                   string          指定需要编译的scheme 
+clean:                    bool            是否在编译前clean                 false 
+output_directory:         string          导出目录                          ./
+output_name:              string          导出ipa名字                       [app_name].ipa 
+export_options:           hash/string     这里指定Xcode API的外部配置文件地址，或者配置hash，见下文 
+export_method:            string          打包方式，可选项app-store ad-hoc package enterprise development developer-id 如果在fastlane中使用了sigh，这个值会从上下文获取 
+include_bitcode:          bool            是否开启bitcode Xcode API         默认值为true 
+include_symbols:          bool            是否生成符号表 Xcode API           默认值为true
