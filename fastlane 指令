@@ -48,7 +48,6 @@ app_icon:                 string            指定icon图片地址，必须为pn
 
 
 Gym常用配置项：
-
 Name                      Type            Description                     Default 
 project:                  string          指定project (未使用cocopods)
 workspace:                string          指定workspace (使用cocopods)
