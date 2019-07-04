@@ -48,7 +48,10 @@ app_icon:                 string            指定icon图片地址，必须为pn
 
 
 Gym常用配置项：
+
 Name                      Type            Description                     Default 
+project:                  string          指定project (未使用cocopods)
+workspace:                string          指定workspace (使用cocopods)
 scheme:                   string          指定需要编译的scheme 
 clean:                    bool            是否在编译前clean                 false 
 output_directory:         string          导出目录                          ./
@@ -57,3 +60,4 @@ export_options:           hash/string     这里指定Xcode API的外部配置�
 export_method:            string          打包方式，可选项app-store ad-hoc package enterprise development developer-id 如果在fastlane中使用了sigh，这个值会从上下文获取 
 include_bitcode:          bool            是否开启bitcode Xcode API         默认值为true 
 include_symbols:          bool            是否生成符号表 Xcode API           默认值为true
+configuration:            string          指定构建App的配置  Release、Debug、自定义
