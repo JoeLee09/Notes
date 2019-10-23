@@ -1,0 +1,7 @@
+1、生成manifest.plist
+archive时选择Include manifest for over-the-air installation;
+App URL: 配置ipa访问地址；
+
+2、配置访问下载
+将1中生成的manifest.plist放到服务器指定位置；
+通过访问itms-services://?action=download-manifest&url=(manifest.plist文件路径)即可下载安装；
